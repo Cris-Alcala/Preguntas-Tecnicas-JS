@@ -13,6 +13,9 @@ let modifyFunction = () => {
 ```
 En este caso, la declaración se mueve a la parte superior al momento de ejecución y no nos generarñia ningún fallo llamarla antes de declararla.
 
+## 5. Diferencia entre la palabra clave var y let
+Cuando se declara la variable var podemos acceder a ella de manera global mientras que con let solo podemos acceder en ese bloque de código
+
 ## 9. ¿Paso por valor o paso por referncia?
 
 Cuando hablamos de paso por valor o paso por referencia hablamos de la manera de la que se asigna un valor de una variable a otra cuando se utiliza "=", como por ejemplo:
@@ -46,6 +49,28 @@ console.log(persona_2.nombre) // Cris
 
 Como podemos ver, el paso es por referencia, esto quiere decir que se pasa la referencia del espacio de memoria y se copia, no los datos en sí.
 
+## 12. Explica las funciones de orden superior en javascript
+Una funcion es de orden superior cuando se le pasa como parámetro una funcion o cuando se de devuelve otra funcion
+
+**Se le pasa por parámetro la función:**
+```javascript
+function primeraFuncion(segundaFuncion()){
+    segundaFuncion();
+}
+```
+
+**Devuelve una funcion:**
+```javascript
+function primeraFuncion() {
+
+  return function() {
+    return "Hola mundo";
+  }
+
+}      
+
+```
+
 ## 16. Diferencias entre test() y exec() en RegExp
 
 Estas funciones son propias de las expresiones regulares (RegExp) con las que podremos comprobar de maneras diferentes si una cadena pasa o no una comprobación de una expresión regular.
@@ -68,6 +93,57 @@ let regExp = /n/;
 regExp.exec('no'); // [ 'n', index: 0, input: 'no', groups: undefined ]
 ```
 
+## 19. Explique el alcance y la cadena de alcance en javascript
+Hay 3 tipos de alcance:
+    -Alcance global
+    -Alcance local o funcional
+    -alcance en bloque
+
+**Alcance global:**
+Son las variables o funciones que se pueden acceder a ellas desde cualquier lugar dentro del codigo
+
+```javascript
+var variable="Hola mundo";
+
+function aniadeNombre(){
+    return varible+" soy Juan";
+}
+```
+
+**Alcance local o funcional:**
+Son las variables que estan declaradas dentro de la funcion, por lo que solo sirven para esa funcion y no se pueden llamar fuera de esta
+```javascript
+function devuelveNombre(){
+    var nombre="Juan"
+    return "soy "+nombre;
+}
+```
+
+**Alcance en bloque:**
+Este tipo de alcance esta relacionado con las variables let y const. Las variables con var no tienen alcance en bloque. Las variables con let no se pueden acceder a ellas mientras que con var si
+```javascript
+{
+    let edad=20;
+}
+
+console.log(edad) //Nos mostraria un error
+```
+
+**Cadena de alcance:**
+Son las variables que estan dentro de una funcion, si estas no estan dentro de esa funcion se buscan fuera de la funcion
+
+```javascript
+var x = 667;
+
+function function() {
+
+  var otrafuncion = function() {
+    console.log(x); // No encuentra x dentro de otraFuncion dentro, asi que la busca fuera
+  };
+  funcion();
+}
+```
+
 ## 23. ¿Qué son los callbacks?
 
 A la acción de llamar a una función dentro de otra función (pasada o no pasada por parámetro) se le llama callback
@@ -83,6 +159,18 @@ operacion(num1, num2, operacion) {
 ```
 En este ejemplo podemos ver dos ejemplos, una donde simplemente llamamos a un "console.log()" dentro de la función y otro ejemplo donde pasamos como parámetro una función la cual se utilizará dentro.
 
+## 26. ¿Qué es la recursividad en un lenguaje de programación?
+Es hacer que una funcion se llame así misma hasta obtener el resultado correcto
+```javascript 
+let numero=0;
+function llegarADiez(){
+    if(numero<10){
+        numero++;
+        llegarADiez();
+    }
+}
+```
+
 ## 30. ¿Qué es el BOM?
 
 Es el modelo de objetos del explorador.
@@ -96,6 +184,9 @@ let nuevaVentana = window.open("", "nuevaVentana", "width=800,height=600");
 ```
 
 # Preguntas técnicas avanzadas
+
+## 2. ¿Qué se entiende por patrón de diseño de prototipo?
+Es el prototipo de un objeto, es como crear un objeto a partir de una plantilla que tienes definida en el objeto (pasándole unos parámetros) y ya podrías creas el objeto con sus valores correspondientes
 
 ## 6. ¿Qué son las promesas?
 
@@ -131,6 +222,27 @@ Para consumir la promesa anterior se podría hacer de la siguiente manera:
 sumarElementosMayor5(4,5)
     .then(response => console.log(response)) // Muestra la el mensaje del "resolve"
     .catch(error => console.log(error)) // Muestra el mensaje del "reject" en el caso de que no se resuelva
+```
+
+## 9. Explique WeakSet en javascript
+Es un array de objetos únicos y ordenados. Solo permite objetos.Tiene que cumplir 3 puntos:
+-Solo contienen objetos
+-Si el objeto no tiene nada creado es recogido como basura (No sirve)
+-Solo tiene 3 métodos, add(), delete() y has()
+
+```javascript
+let objeto1={
+    nombre:"Juan",
+    apellido:"Lara",
+    edad:20
+}
+let objeto2={
+    nombre:"Juan",
+    apellido:"Lara",
+    edad:20
+}
+const nuevoSet =new WeakSet([objeto1])
+nuevoSet.add(objeto2);
 ```
 
 ## 13. Diferencia entre herencia prototípica y clásica
@@ -177,6 +289,9 @@ let miPerro = new Perro("Rex");
 miPerro.come(); // Rex está comiendo
 miPerro.ladra(); // Rex está ladrando
 ```
+
+## 16. ¿Es JavaScript un lenguaje de paso por referencia o de paso por valor?
+JavaScript para las variables usa un paso por valor, aunque en los objetos se pasa por referencia pero esta sigue siendo pasada por valor, por lo que recibe una copia, estas modificaciones que se hagan a la copia también son afectadas a la original
 
 ## 20. ¿Qué hay que hacer para poner en práctica el Alcance Léxico?
 
