@@ -1,7 +1,3 @@
-# Preguntas-Tecnicas-JS
-
-Listado de preguntas técnicas sobre Javascript en Español desde iniciación a avanzadas
-
 # Preguntas técnicas de iniciación
 
 ## 2. ¿Qué es la elevación en Javascript?
