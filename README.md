@@ -5,7 +5,7 @@
 ## 1. ¿Cuáles son los diferentes tipos de datos presentes en JavaScript?
 
 ### A - Tipos primitivos
-**Cadena** : representa una serie de caracteres y se escribe entre comillas. Una cadena se puede representar mediante comillas simples o dobles.
+**String** : representa una serie de caracteres y se escribe entre comillas. Una cadena se puede representar mediante comillas simples o dobles.
 
  Ejemplo :
 
@@ -109,7 +109,7 @@ En este caso, la declaración se mueve a la parte superior al momento de ejecuci
 ## 5. Diferencia entre la palabra clave var y let
 Cuando se declara la variable var podemos acceder a ella de manera global mientras que con let solo podemos acceder en ese bloque de código
 
-## 8. ¿Qué es la propiedad **`NaN`**  en JavaScript?
+## 8. ¿Qué es la propiedad NaN en JavaScript?
     
 La propiedad NaN representa el valor "No es un número" . Indica un valor que no es un número legal.
     
@@ -189,7 +189,7 @@ function primeraFuncion() {
 
 ```
 
-## 15. Explique los métodos `call()`, `apply()` y **`bind()`**.
+## 15. Explique los métodos `call()`, `apply()` y `bind()`.
     
 - `call()` :
     
@@ -342,7 +342,7 @@ function function() {
 }
 ```
 
-## 22. ¿Qué son los `prototypes` de objetos?
+## 22. ¿Qué son los prototypes de objetos?
     
 Todos los objetos de javascript heredan propiedades de un **`prototype`**.
 
@@ -423,7 +423,7 @@ let nuevaVentana = window.open("", "nuevaVentana", "width=800,height=600");
 ## 2. ¿Qué se entiende por patrón de diseño de prototipo?
 Es el prototipo de un objeto, es como crear un objeto a partir de una plantilla que tienes definida en el objeto (pasándole unos parámetros) y ya podrías creas el objeto con sus valores correspondientes
 
-## 5. En JavaScript, ¿con cuántos `métodos diferentes puedes crear un objeto`?
+## 5. En JavaScript, ¿con cuántos métodos diferentes puedes crear un objeto?
     
 - Con Object
     
@@ -595,7 +595,7 @@ const nuevoSet =new WeakSet([objeto1])
 nuevoSet.add(objeto2);
 ```
 
-## 12.  ¿Qué es la `desestructuración` de objetos?
+## 12.  ¿Qué es la desestructuración de objetos?
     
 La desestructuración de objetos es una nueva forma de extraer elementos de un objeto o un array
     
@@ -686,7 +686,7 @@ miPerro.ladra(); // Rex está ladrando
 ## 16. ¿Es JavaScript un lenguaje de paso por referencia o de paso por valor?
 JavaScript para las variables usa un paso por valor, aunque en los objetos se pasa por referencia pero esta sigue siendo pasada por valor, por lo que recibe una copia, estas modificaciones que se hagan a la copia también son afectadas a la original
 
-## 19.  ¿Cuál es el papel de los `scripts diferidos` en JavaScript?
+## 19.  ¿Cuál es el papel de los scripts diferidos en JavaScript?
     
 Los scripts diferidos en JavaScript son scripts que no se ejecutan tan pronto como se cargan en la página web, sino que **se retrasan hasta que la página ha terminado de analizarse y construirse**.
 
