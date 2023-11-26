@@ -109,6 +109,42 @@ En este caso, la declaración se mueve a la parte superior al momento de ejecuci
 ## 5. Diferencia entre la palabra clave var y let
 Cuando se declara la variable var podemos acceder a ella de manera global mientras que con let solo podemos acceder en ese bloque de código
 
+## 6. Explicación de la Coerción
+También conocido como conversión automática implicita de valores (Ej: de cadena de texto a número). 
+La coerción en JavaScript se refiere a la conversión automática de un tipo de dato a otro durante la ejecución de operaciones. Esto puede ocurrir de manera implícita o explícita. La coerción implícita ocurre automáticamente por el motor de JavaScript, mientras que la coerción explícita es cuando tú como desarrollador realizas la conversión de manera deliberada.
+### Coerción Implícita:
+**1. Coerción numérica:**
+ ~~~jsx
+var numero = "123";
+var resultado = numero + 5;  // Se produce coerción implícita a número
+console.log(resultado);     // Resultado: 128 (123 + 5)
+ ~~~
+En este caso, JavaScript convierte la cadena "123" a un número para realizar la operación de suma.
+**2. Coerción de Cadenas:**
+ ~~~jsx
+var cadena = 42;
+var resultado = "La respuesta es: " + cadena;  // Se produce coerción implícita a cadena
+console.log(resultado);                        // Resultado: "La respuesta es: 42"
+ ~~~
+En este caso, JavaScript convierte la cadena "123" a un número para realizar la operación de suma.
+### Coerción Explícita:
+**1. Coerción a número:**
+ ~~~jsx
+var cadena = "123";
+var numero = Number(cadena);  // Coerción explícita a número
+console.log(numero);          // Resultado: 123
+ ~~~
+Utilizando la función Number(), se realiza una coerción explícita de la cadena a un número.
+**2. Coerción a cadena:**
+ ~~~jsx
+var numero = 456;
+var cadena = String(numero);  // Coerción explícita a cadena
+console.log(cadena);          // Resultado: "456"
+ ~~~
+Mediante la función String(), se realiza una coerción explícita del número a una cadena.
+
+La coerción puede conducir a comportamientos inesperados, por lo que es importante entender cómo funciona y manejarla adecuadamente en tus programas. Además, es una buena práctica realizar conversiones explícitas cuando sea posible para evitar sorpresas en tu código.
+
 ## 8. ¿Qué es la propiedad NaN en JavaScript?
     
 La propiedad NaN representa el valor "No es un número" . Indica un valor que no es un número legal.
@@ -188,6 +224,25 @@ function primeraFuncion() {
 }      
 
 ```
+
+## 13. Explicación de la palabra reservada `this`
+La palabra clave `this` en JavaScript se refiere al objeto al cual hace referencia.
+**Ejemplo:**
+ ~~~jsx
+class EjemploClase {
+    constructor(nombre) {
+        this.nombre = nombre;
+    }
+
+    mostrarNombre() {
+        console.log(this.nombre);  // Se refiere a la instancia de la clase creada
+    }
+}
+
+const instancia = new EjemploClase("Ejemplo");
+instancia.mostrarNombre();  // Resultado: "Ejemplo"
+ ~~~
+ En este ejemplo, `this` dentro del método mostrarNombre se refiere a la instancia de la clase EjemploClase. En este contexto, `this` apunta al objeto específico creado a partir de la clase.
 
 ## 15. Explique los métodos `call()`, `apply()` y `bind()`.
     
@@ -342,6 +397,23 @@ function function() {
 }
 ```
 
+## 20. Closures en JavaScript.
+Un "closure" en JavaScript es una característica que permite a una función interna acceder y recordar las variables de su función externa, incluso después de que la función externa haya terminado de ejecutarse. Esto se logra cuando una función interna es definida dentro de otra función (función externa) y es utilizada fuera de esa función externa.
+
+Los closures son útiles para crear estructuras de datos complejas y funciones más flexibles al preservar el estado de las variables. **Ejemplo:**
+ ~~~jsx
+var Persona = function(pNombre) {
+  var nombre = pNombre;
+
+  this.getNombre = function() {
+    return nombre;
+  }
+}
+
+var persona = new Persona("Pepito");
+console.log(persona.getNombre());
+ ~~~
+
 ## 22. ¿Qué son los prototypes de objetos?
     
 Todos los objetos de javascript heredan propiedades de un **`prototype`**.
@@ -398,6 +470,33 @@ function llegarADiez(){
     }
 }
 ```
+
+## 27. Uso de un constructor en JavaScript.
+Los constructores son funciones usadas para crear objetos en JavaScript.
+
+Si queremos crear múltiples objetos en JavaScript con propiedades y métodos similares, las funciones constructor son usadas.
+ ~~~jsx
+// Definición del constructor
+function Persona(nombre, edad) {
+  // Propiedades de la persona
+  this.nombre = nombre;
+  this.edad = edad;
+
+  // Método para obtener información de la persona
+  this.obtenerInformacion = function() {
+    return `Nombre: ${this.nombre}, Edad: ${this.edad}`;
+  };
+}
+
+// Creación de instancias utilizando el constructor
+var persona1 = new Persona("Juan", 25);
+var persona2 = new Persona("María", 30);
+
+// Uso de métodos y propiedades
+console.log(persona1.obtenerInformacion());  // Resultado: "Nombre: Juan, Edad: 25"
+console.log(persona2.obtenerInformacion());  // Resultado: "Nombre: María, Edad: 30"
+ ~~~
+
 ## 29.  ¿Qué método se utiliza para recuperar un carácter de un índice determinado?
     
 La función `charAt()` de `string` de JavaScript encuentra un elemento char en el índice proporcionado.
@@ -422,6 +521,70 @@ let nuevaVentana = window.open("", "nuevaVentana", "width=800,height=600");
 
 ## 2. ¿Qué se entiende por patrón de diseño de prototipo?
 Es el prototipo de un objeto, es como crear un objeto a partir de una plantilla que tienes definida en el objeto (pasándole unos parámetros) y ya podrías creas el objeto con sus valores correspondientes
+
+## 3. Diferencias al declarar variables usando var, let y const.
+En JavaScript, hay tres maneras de declarar variables: var, let y const. Cada una tiene sus propias características y comportamientos.
+
+| Palabra clave        | const | let | var |
+|----------------------|-------|-----|-----|
+| Ámbito Global        | No    | No  | Sí  |
+| Ámbito de Función    | Sí    | Sí  | Sí  |
+| Ámbito de Bloque     | Sí    | Sí  | No  |
+| Puede Ser Reasignada | No    | Sí  | Sí  |
+
+### `var`
+**Ámbito de función:**
+Las variables declaradas con var tienen un ámbito de función. Esto significa que están disponibles en toda la función en la que se declaran, incluso antes de la línea de declaración.
+
+**Reasignación y redeclaración:**
+Se pueden reasignar y redeclarar dentro de su ámbito.
+
+**Hoisting:**
+Las declaraciones var se izan (hoisted) al principio de su ámbito, pero solo la declaración, no la inicialización.
+ ~~~jsx
+function ejemploVar() {
+  if (true) {
+    var x = 10;
+  }
+
+  console.log(x);  // Resultado: 10 (var tiene ámbito de función)
+}
+ ~~~
+
+### `let`
+**Ámbito de bloque:**
+Las variables declaradas con let tienen un ámbito de bloque. Esto significa que están limitadas al bloque en el que se declaran.
+
+**No permite redeclaración:**
+No puedes redeclarar la misma variable en el mismo ámbito.
+
+ ~~~jsx
+function ejemploLet() {
+  if (true) {
+    let y = 20;
+    console.log(y);  // Resultado: 20 (let tiene ámbito de bloque)
+  }
+
+  // console.log(y);  // Esto generaría un error, ya que y no está definido aquí
+}
+ ~~~
+
+### `const`
+**Ámbito de bloque:**
+Al igual que let, const tiene un ámbito de bloque.
+
+**Asignación única y no redeclaración:**
+La variable debe asignarse al momento de la declaración y no puede ser reasignada. Además, no se permite la redeclaración en el mismo ámbito.
+
+ ~~~jsx
+function ejemploConst() {
+  const z = 30;
+  // z = 40;  // Esto generaría un error, ya que no se puede reasignar una constante
+  // const z = 40;  // Esto también generaría un error, ya que no se puede redeclarar en el mismo ámbito
+
+  console.log(z);  // Resultado: 30
+}
+ ~~~
 
 ## 5. En JavaScript, ¿con cuántos métodos diferentes puedes crear un objeto?
     
@@ -595,6 +758,13 @@ const nuevoSet =new WeakSet([objeto1])
 nuevoSet.add(objeto2);
 ```
 
+## 10. ¿Por que usamos callbacks?
+Un callback en JavaScript es una función que se pasa como argumento a otra función y que se ejecuta después de que se completa alguna operación específica.
+
+Se utiliza principalmente para manejar operaciones asíncronas, controlar el flujo de ejecución y gestionar eventos en el desarrollo de aplicaciones, ya que JavaScript es un lenguaje basado en eventos. Es decir, en vez de esperar una respuesta antes de continuar, JavaScript continuará su ejecución mientras monitoriza eventos adicionales.
+
+Los callbacks son una técnica de asegurarte que un código en particular no se ejecuta hasta que otro código haya completado su ejecución.
+
 ## 12.  ¿Qué es la desestructuración de objetos?
     
 La desestructuración de objetos es una nueva forma de extraer elementos de un objeto o un array
@@ -685,6 +855,14 @@ miPerro.ladra(); // Rex está ladrando
 
 ## 16. ¿Es JavaScript un lenguaje de paso por referencia o de paso por valor?
 JavaScript para las variables usa un paso por valor, aunque en los objetos se pasa por referencia pero esta sigue siendo pasada por valor, por lo que recibe una copia, estas modificaciones que se hagan a la copia también son afectadas a la original
+
+## 17. Diferencia entre el uso de Async/Await y Generators para lograr la misma funcionalidad.
+
+- Las funciones generadoras se ejecutan paso a paso, lo que significa una salida a la vez, mientras que las funciones Async/await se ejecutan secuencialmente una después de otra.
+
+- Async/await facilita ciertos casos de uso de las funciones generadoras para ejecutarse de manera más sencilla.
+
+- El resultado de salida de la función generadora siempre es valor: X, hecho: Boolean, pero el valor de retorno de la función Async es siempre una promesa o genera un error.
 
 ## 19.  ¿Cuál es el papel de los scripts diferidos en JavaScript?
     
