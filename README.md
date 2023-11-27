@@ -105,6 +105,18 @@ let modifyFunction = () => {
     // Cuerpo de la función
 }
 ```
+## 4.Diferencia entre los operadores "==" y "==="
+La principal diferencia entre ambos operadores es que == se utiliza para comparar valores, mientras que === se utiliza para comparar tanto valores como tipos.
+
+**Ejemplo**
+
+```Javascript
+    let num1 = '3';
+    let num2 = 3;
+
+    (num1 == num2)// Devuelve true porque ambos valores son iguales
+    (num1 === num2)// Devuelve false porque los tipos son diferentes
+```
 
 ## 5. Diferencia entre la palabra clave var y let
 Cuando se declara la variable var podemos acceder a ella de manera global mientras que con let solo podemos acceder en ese bloque de código
@@ -202,6 +214,22 @@ console.log(persona_2.nombre) // Cris
 ```
 
 Como podemos ver, el paso es por referencia, esto quiere decir que se pasa la referencia del espacio de memoria y se copia, no los datos en sí.
+
+## 11.¿Que es el modo estricto en Javascript y cuáles son sus caracteristicas?
+
+El modo estricto en javascript es una funcion que permite escribir código o una funcion en un entorno operativo "estricto".
+En 'Modo Estricto', se lanzarán todas las formas de errores, incluidos los errores silenciosos. Como resultado, la depuración se vuelve mucho más simple. 
+Así se reducen las posibilidades del programador de cometer un error.
+
+Caracteristicas:
+
+1.Los argumentos duplicados no son permitidos por los desarrolladores.
+
+2.En modo estricto, no podrás usar la palabra clave JavaScript como parámetro o nombre de función.
+
+3.La palabra clave 'útil estricta' se utiliza para definir el modo estricto al inicio del script. El modo Estricto es compatible con todos los navegadores.
+
+4.Los ingenieros no podrán crear variables globales en 'Strict Mode
 
 ## 12. Explica las funciones de orden superior en javascript
 Una funcion es de orden superior cuando se le pasa como parámetro una funcion o cuando se de devuelve otra funcion
@@ -345,6 +373,17 @@ Este método te devuelve un arreglo con diferentes elementos (cadena buscada, in
 let regExp = /n/;
 regExp.exec('no'); // [ 'n', index: 0, input: 'no', groups: undefined ]
 ```
+## 18.Javascript externo: Principales Ventajas
+
+Un código javascript externo es un codigo javascript escrito en un archivo separado
+con la extension js que se puede vincular bien en un elemento "head" o en un elemento "body" del archivo html donde se desee implementar el código.
+
+Algunas ventajas de javascript externo son
+
+1.Permite a los diseñadores y desarrolladores de la web colaborar en archivos HTML y javascript.
+2.Podemos reutilizar el código.
+3.La legibilidad de código es simple en javascript externo.
+
 
 ## 19. Explique el alcance y la cadena de alcance en javascript
 Hay 3 tipos de alcance:
@@ -459,6 +498,40 @@ operacion(num1, num2, operacion) {
 ```
 En este ejemplo podemos ver dos ejemplos, una donde simplemente llamamos a un "console.log()" dentro de la función y otro ejemplo donde pasamos como parámetro una función la cual se utilizará dentro.
 
+## 25.¿Qué es la memorización?
+
+La memorización es el modo por el cual el valor de retorno de una funcion se guarda en la caché en función de sus parámetros.
+
+Si no se cambia el parámetro de esa función, se devuelve la versión en caché de la función.
+
+**Ejemplo**
+
+``` Javascript 
+
+    function memoizedMultiplyTo3(){
+        let cache = [];
+
+        return function(num){
+            if(num in cache){
+                console.log("valor almacenado en caché");
+                return cache[num];
+            }else{
+                cache[num] = num * 3;
+                return cache[num];
+            }
+        }
+    }
+
+    let memoizedFunc = memoizedMultiplyTo3();
+
+    memoizedFunc(20); // devuelve el valor normal
+    memoizedFunc(20);// devuelve el valor guardado en caché
+```
+
+### Explicacion:
+En el código anterior, si ejecutamos la función memoizedFunc con el mismo parámetro, en lugar de calcular el resultado de nuevo, devuelve el resultado en caché.
+
+
 ## 26. ¿Qué es la recursividad en un lenguaje de programación?
 Es hacer que una funcion se llame así misma hasta obtener el resultado correcto
 ```javascript 
@@ -518,6 +591,40 @@ let nuevaVentana = window.open("", "nuevaVentana", "width=800,height=600");
 ```
 
 # Preguntas técnicas avanzadas
+
+## 1.¿Cuáles son las funciones flecha?
+
+Las funciones de flecha se introdujeron en la versión ES6 de javascript. Nos proporcionan una nueva y más corta sintaxis para declarar funciones. Las funciones de flecha sólo se pueden utilizar como expresión de función.
+
+**Funcion normal**
+
+```javascript
+    
+    function resta(num1,num2){
+        return num1 - num2;
+    }
+
+```
+
+**Funcion Flecha**
+
+```javascript
+    
+    let resta = (num1,num2) => num1 + num2;
+
+```
+
+### Explicación
+
+Las funciones de flecha se declaran sin la palabra clave de la función. Si sólo hay una expresión que devuelve, entonces no necesitamos usar la palabra clave de retorno, así como en una función de flecha como se muestra en el ejemplo anterior.
+
+```javascript
+    
+    let sumar5 = num1 => num1 + 5;
+
+```
+
+Si la función toma sólo un argumento, entonces el paréntesis () alrededor del parámetro se puede omitir como se muestra en el código anterior.
 
 ## 2. ¿Qué se entiende por patrón de diseño de prototipo?
 Es el prototipo de un objeto, es como crear un objeto a partir de una plantilla que tienes definida en el objeto (pasándole unos parámetros) y ya podrías creas el objeto con sus valores correspondientes
@@ -736,6 +843,29 @@ sumarElementosMayor5(4,5)
     .then(response => console.log(response)) // Muestra la el mensaje del "resolve"
     .catch(error => console.log(error)) // Muestra el mensaje del "reject" en el caso de que no se resuelva
 ```
+## 8.¿Qué son las funciones generadoras?
+
+Las funciones generadoras son una clase especial de funciones que se pueden detener a mitad de camino y luego continuar desde donde se habían detenido.
+
+**En las funciones normales, utilizamos la palabra clave de retorno para devolver un valor y tan pronto como se ejecute la declaración de retorno, la ejecución de la función se detiene:**
+
+```javascript
+    function mostrarValor(valor){
+        return valor;
+        console.log(15) // Esta línea no se ejecutará
+    }
+```
+
+**En el caso de las funciones generadoras, cuando se les llama, no ejecutan el código, en cambio, devuelven un objeto generador. Este objeto generador se encarga de la ejecución.**
+
+```javascript
+    function *holaMundo(){
+        yield 'holaMundo';
+        yield 'soy dani';
+    };
+
+    holaMundo(); // devuelve un objeto de tipo generador
+```
 
 ## 9. Explique WeakSet en javascript
 Es un array de objetos únicos y ordenados. Solo permite objetos.Tiene que cumplir 3 puntos:
@@ -852,6 +982,17 @@ let miPerro = new Perro("Rex");
 miPerro.come(); // Rex está comiendo
 miPerro.ladra(); // Rex está ladrando
 ```
+## 15.¿Qué son los patrones de diseño en Javascript?
+
+Los patrones de diseño son formas de estructuar el código en javascript cuya finalidad es crear código más estable.
+
+Se dividen principalmente en 3 categorías:
+
+**Patrón de Diseño de Creación:**El mecanismo de generación de objetos es abordado por el Patrón de Diseño Creacióntivo JavaScript. Su objetivo es hacer los artículos que sean apropiados para un determinado escenario.
+
+**Patrón de Diseño Estructural:** El Patrón de Diseño Estructural JavaScript explica cómo las clases y objetos que hemos generado hasta ahora se pueden combinar para construir marcos más grandes. Este patrón hace que sea más fácil crear relaciones entre ítems definiendo una forma directa de hacerlo.
+
+**Patrón de Diseño de Comportamiento:** Este patrón de diseño resalta patrones típicos de comunicación entre objetos en JavaScript. Como resultado, la comunicación puede llevarse a cabo con mayor libertad.
 
 ## 16. ¿Es JavaScript un lenguaje de paso por referencia o de paso por valor?
 JavaScript para las variables usa un paso por valor, aunque en los objetos se pasa por referencia pero esta sigue siendo pasada por valor, por lo que recibe una copia, estas modificaciones que se hagan a la copia también son afectadas a la original
