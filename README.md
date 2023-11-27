@@ -105,6 +105,9 @@ let modifyFunction = () => {
     // Cuerpo de la función
 }
 ```
+## 3 - ¿Por qué usamos la palabra "depurador" en javascript?
+El depurador del navegador debe estar activado para poder depurar el código. Los depuradores integrados se pueden activar y desactivar, lo que requiere que el usuario informe los fallos. Las sección restante del código debería detener la ejecución antes de pasar a la siguiente línea durante la depuración
+
 ## 4.Diferencia entre los operadores "==" y "==="
 La principal diferencia entre ambos operadores es que == se utiliza para comparar valores, mientras que === se utiliza para comparar tanto valores como tipos.
 
@@ -214,6 +217,43 @@ console.log(persona_2.nombre) // Cris
 ```
 
 Como podemos ver, el paso es por referencia, esto quiere decir que se pasa la referencia del espacio de memoria y se copia, no los datos en sí.
+
+## 10 - ¿Qué es una función invocada inmediatamente en JavaScript?
+Es una función que se ejecuta tan pronto como se define.
+
+**Sintaxis de IIFE**
+```javascript
+(function(){
+    console.log("Estoy dentro de un IIFE");
+})();
+```
+Para comprender el IIFE, debemos comprender los dos conjuntos de paréntesis que se agregan al crear un IIFE:
+
+**Primer conjunto de paréntesis:**
+```javascript
+(function (){
+    // Código aqui...
+})
+```
+
+**Al ejecutar código javascript, cada vez que el compilador ve la palabra "función", asume que estamos declarando una función en el código. Por lo tanto, si no usamos el primer conjunto de paréntesis, el compilador arroja un error porque cree que estamos declarando una función y, según la sintaxis de declarar una función, una función siempre debe tener un nombre.**
+```javascript
+function (){
+    // Código aqui...
+}
+```
+
+Si queremos eliminar este error ponemos el primer conjunto de paréntesis
+
+**El segundo par de paréntesis**
+```javascript
+(function (){
+    // Código aqui...   
+})();
+```
+En resumen, el IIFE tiene dos propósitos principales:
+- Crear variables privadas para evitar conflictos con otros scripts o módulos.
+- Proporcionar una forma segura y organizada de encapsular funciones y variables.
 
 ## 11.¿Que es el modo estricto en Javascript y cuáles son sus caracteristicas?
 
@@ -373,6 +413,41 @@ Este método te devuelve un arreglo con diferentes elementos (cadena buscada, in
 let regExp = /n/;
 regExp.exec('no'); // [ 'n', index: 0, input: 'no', groups: undefined ]
 ```
+## 17 - ¿Qué es el curry en JavaScript?
+La técnica del currying es una forma de programación funcional en la cual se aplica la función de manera recursiva.
+
+```javascript
+function sumar(a) {
+  return function(b){
+    return a + b;
+  }
+}
+
+sumar(3)(4) 
+```
+
+Si tenemos una función es que sumar(a,b), la función después del curry sería sumar(a)(b), en este caso no se cambia la funcionalidad de la función, solo la forma en llamar a la función.
+
+```javascript
+function multiply(a,b){
+  return a*b;
+}
+
+function currying(fn){
+  return function(a){
+    return function(b){
+      return fn(a,b);
+    }
+  }
+}
+
+var curriedMultiply = currying(multiply);
+
+multiply(4, 3); // Returns 12
+
+curriedMultiply(4)(3); // Also returns 12
+```
+**Se ha transformado la función multiplicar(a,b) en una función curryMultiply en la que toma un parámetro a la vez**
 ## 18.Javascript externo: Principales Ventajas
 
 Un código javascript externo es un codigo javascript escrito en un archivo separado
@@ -498,6 +573,12 @@ operacion(num1, num2, operacion) {
 ```
 En este ejemplo podemos ver dos ejemplos, una donde simplemente llamamos a un "console.log()" dentro de la función y otro ejemplo donde pasamos como parámetro una función la cual se utilizará dentro.
 
+## 24 - ¿Cuáles son los tipos de errores en javascript?
+Existen 2 tipos de errores.
+
+- **Error de sintaxis:** Los errores de sintaxis son errores o problemas ortográficos en el ódigo que hacen que el programa no se ejecute en absoluto o deje de ejecutarse a mitad de camino.
+- **Error lógico:** Los errores de razonamiento ocurren cuando la sintaxis es adecuada para la lógica o el programa es incorrecto
+
 ## 25.¿Qué es la memorización?
 
 La memorización es el modo por el cual el valor de retorno de una funcion se guarda en la caché en función de sus parámetros.
@@ -589,6 +670,9 @@ Aquí dejaré un ejemplo de como se abriría una ventana nueva con el BOM.
 ```javascript
 let nuevaVentana = window.open("", "nuevaVentana", "width=800,height=600");
 ```
+## 31 - ¿Cuál es la distinción entre JavaScript del lado del cliente y del lado del servidor?
+- JavaScript del lado del cliente se compone de dos partes, un lenguaje fundamental y objetos predefinidos para ejecutar JavaScript en un navegador. JavaScript para el cliente se incluye automáticamente en las páginas HTML. En tiempo de ejecución, el navegador comprende este script.
+- JavaScript del lado del servidor implica la ejecución de código JavaScript en un servidor en respuesta a las solicitudes del cliente. Maneja estas solicitudes y entrega la respuesta relevante al cliente, que puede incluir JavaScript del lado del cliente para su posterior ejecución dentro del navegador.
 
 # Preguntas técnicas avanzadas
 
@@ -843,6 +927,33 @@ sumarElementosMayor5(4,5)
     .then(response => console.log(response)) // Muestra la el mensaje del "resolve"
     .catch(error => console.log(error)) // Muestra el mensaje del "reject" en el caso de que no se resuelva
 ```
+## 7 - ¿Qué son las clases en JavaScript?
+Las clases en JavaScript son una de las características más avanzadas y versátiles de la plataforma. Las clases son una construcción de alto nivel que permite a los desarrolladores crear objetos con características similares y con un comportamiento predecible.
+
+Un ejemplo de clase en JavaScript sería:
+```javascript
+class Auto {
+ constructor(marca, modelo, color) {
+    this.marca = marca;
+    this.modelo = modelo;
+    this.color = color;
+ }
+
+ mostrarInformacion() {
+    console.log(`Marca: ${this.marca}, Modelo: ${this.modelo}, Color: ${this.color}`);
+ }
+}
+```
+
+**Para utilizar esta clase, podemos crear instancias de la misma de la siguiente manera:**
+```javascript
+let auto1 = new Auto('Toyota', 'Corolla', 'Rojo');
+let auto2 = new Auto('Honda', 'Civic', 'Blanco');
+
+auto1.mostrarInformacion(); // Marca: Toyota, Modelo: Corolla, Color: Rojo
+auto2.mostrarInformacion(); // Marca: Honda, Modelo: Civic, Color: Blanco
+```
+
 ## 8.¿Qué son las funciones generadoras?
 
 Las funciones generadoras son una clase especial de funciones que se pueden detener a mitad de camino y luego continuar desde donde se habían detenido.
@@ -982,6 +1093,21 @@ let miPerro = new Perro("Rex");
 miPerro.come(); // Rex está comiendo
 miPerro.ladra(); // Rex está ladrando
 ```
+## 14 - ¿Qué es una zona muerta temporal?
+La zona muerta temporal es un comportamiento que ocurre con variables declaradas usando palabras clave let y const . Es un comportamiento en el que intentamos acceder a una variable antes de que se inicialice. Ejemplos de zona muerta temporal:
+```javascript
+x = 23; // Gives reference error
+
+let x;
+
+function anotherRandomFunc(){
+  message = "Hello"; // Throws a reference error
+
+  let message;
+}
+anotherRandomFunc();
+```
+
 ## 15.¿Qué son los patrones de diseño en Javascript?
 
 Los patrones de diseño son formas de estructuar el código en javascript cuya finalidad es crear código más estable.
@@ -1059,3 +1185,17 @@ function funcionExterna() {
 
 funcionExterna(); // Imprime: ¡Hola, mundo!
 ```
+## 21 - ¿Cuál es el propósito del siguiente código JavaScript?
+```javascript
+var scope = "global scope";
+function check() 
+{
+    var scope = "local scope"; 
+    function f() 
+    { 
+         return scope; 
+    }
+    return f;
+}
+```
+Cada función de ejecución, bloque de código y script en su conjunto en JavaScript tiene un objeto relacionado conocido como entorno léxico. La línea de código anterior devuelve el valor dentro del alcance.
