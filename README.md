@@ -92,7 +92,8 @@ return this.x;
 // Colección de datos en una matríz o array
 let array1 = [5, "Hello", true, 4.1];
 ```
- 
+En este caso, la declaración se mueve a la parte superior al momento de ejecución y no nos generarñia ningún fallo llamarla antes de declararla.
+
 ## 2. ¿Qué es la elevación en Javascript?
 
 La elevación es un comportamiento de Javascript en el cual al momento de ejecución las declaraciones de las variables, constantes y funciones se mueven a la parte de arriba tanto global como localmente.
@@ -104,7 +105,6 @@ let modifyFunction = () => {
     // Cuerpo de la función
 }
 ```
-En este caso, la declaración se mueve a la parte superior al momento de ejecución y no nos generarñia ningún fallo llamarla antes de declararla.
 
 ## 5. Diferencia entre la palabra clave var y let
 Cuando se declara la variable var podemos acceder a ella de manera global mientras que con let solo podemos acceder en ese bloque de código
