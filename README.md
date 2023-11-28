@@ -6,6 +6,7 @@
 
 ### A - Tipos primitivos
 - **String**
+  
   Representa una serie de caracteres y se escribe entre comillas. Una cadena se puede representar mediante comillas simples o dobles.
 
  Ejemplo :
