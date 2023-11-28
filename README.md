@@ -481,7 +481,7 @@ function aniadeNombre(){
 }
 ```
 
-**ALocal or function scope:**
+**Local or function scope:**
 Son las variables que estan declaradas dentro de la funcion, por lo que solo sirven para esa funcion y no se pueden llamar fuera de esta
 ```javascript
 function devuelveNombre(){
@@ -506,13 +506,15 @@ Son las variables que estan dentro de una funcion, si estas no estan dentro de e
 ```javascript
 var x = 667;
 
-function function() {
+function funcion() {
 
-  var otrafuncion = function() {
-    console.log(x); // No encuentra x dentro de otraFuncion dentro, asi que la busca fuera
+  var otraFuncion = function() {
+    console.log(x); // No encuentra x dentro de otraFuncion, asi que la busca fuera, en el siguiente scope (funcion). Tampoco la encuentra y ya la busca en el scope global. Ahí sí la encuentra y por tanto muestra 667
   };
-  funcion();
+  otraFuncion();
 }
+
+funcion();
 ```
 
 ## 20. Closures en JavaScript.
