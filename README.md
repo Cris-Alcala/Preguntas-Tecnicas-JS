@@ -896,19 +896,19 @@ function ejemploConst() {
 
 Las promesas se utilizan para manejar operaciones asíncronas, es decir, que pueden tardar tiempo en resolverse como por ejemplo una petición a un servidor.
 
-Una promesa tiene 3 estados:
+Una promesa tiene 4 estados:
     
 - **Pending**: Estado inicial de la promesa.
 - **Fulfilled**: Cuando se resuelve/completa la promesa.
 - **Rejected**: Cuando se rechaza o no se completa la promesa.
 - **Settled**: Cuando la promesa se resuelve o rechaza.
 
-Pare crear una promesa se utiliza su propio constructor
+Para crear una promesa se utiliza su propio constructor
 
 ```javascript
 function sumarElementosMayor5(num1, num2) {
     return new Promise((resolve,reject) => {
-        (num1+num2>5)?resolve('La suma es mayor a 5') : reject('La suma no es mayor a 5')
+        (num1+num2>5)?resolve('La suma es mayor a 5') : reject('La suma no es mayor a 5');
     });
 }    
 ```
