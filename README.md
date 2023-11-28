@@ -188,7 +188,7 @@ Ejemplo:
     isNaN(undefined) // Returns true
 ```
 
-## 9. ¿Paso por valor o paso por referncia?
+## 9. ¿Paso por valor o paso por referencia?
 
 Cuando hablamos de paso por valor o paso por referencia hablamos de la manera de la que se asigna un valor de una variable a otra cuando se utiliza "=", como por ejemplo:
 
