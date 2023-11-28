@@ -538,19 +538,26 @@ funcion();
 ## 20. Closures en JavaScript.
 Un "closure" en JavaScript es una característica que permite a una función interna acceder y recordar las variables de su función externa, incluso después de que la función externa haya terminado de ejecutarse. Esto se logra cuando una función interna es definida dentro de otra función (función externa) y es utilizada fuera de esa función externa.
 
-Los closures son útiles para crear estructuras de datos complejas y funciones más flexibles al preservar el estado de las variables. **Ejemplo:**
+Los closures son útiles para crear estructuras de datos complejas y funciones más flexibles al preservar el estado de las variables. 
+**Ejemplo:**
  ~~~jsx
-var Persona = function(pNombre) {
-  var nombre = pNombre;
-
-  this.getNombre = function() {
-    return nombre;
+const add = (function () {
+  let counter = 0;
+  return function () {
+       counter += 1; 
+       return counter
   }
-}
+})();
 
-var persona = new Persona("Pepito");
-console.log(persona.getNombre());
+add(); // counter es 1
+add(); // counter es 2
+add(); // counter es 3
  ~~~
+A la variable add se le asigna lo que devuelve la función autoinvocable.
+La función autoinvocable sólo se ejecuta una vez, establece el valor de counter a 0 y devuelve una función que modifica dicha variable. Esa es la función que asigna a add.
+Por tanto, add es una closure o clausura, esto es, una función con acceso a una variable privada como es counter.
+La variable counter está protegida por el scope de la función anónima y sólo puede ser cambiado utilizando la función add.
+Este es el principio del hook useState que se verá en React. Por lo que es muy importante entender su funcionamiento.
 
 ## 22. ¿Qué son los prototypes de objetos?
     
