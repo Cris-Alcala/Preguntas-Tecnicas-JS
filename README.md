@@ -540,9 +540,9 @@ Todos los objetos de javascript heredan propiedades de un **`prototype`**.
 
 Ejemplos: 
     
-> `Date object` heredan propiedades de prototipo fecha
+> `Date object` heredan propiedades de prototipo Date
     
-> `Math object` heredan propiedades del prototipo matemático
+> `Math object` heredan propiedades del prototipo Math
     
 > `Array object` heredan propiedades del prototipo Array
     
