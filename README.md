@@ -554,10 +554,14 @@ Esto nos permite usar propiedades y métodos en un objeto incluso si las propied
 Ejemplo:
     
 ```jsx
-    const miArray = [];
-    miArray.push(2);
-    console.log(miArray);
-    //[2]
+let arr = [2,3,4];
+
+arr.push(5); // [2,3,4,5]
+
+arr.__proto__.push = (val) => console.log("push hackeado para que no añada " + val);
+
+arr.push(6); // push hackeado para que no añada 6  
+arr.push(7); // push hackeado para que no añada 7 
 ```
     
 El motor de javascript ve que el método `push()` no existe en el objeto de Array actual  y, por lo tanto, busca el método push dentro del prototipo Array y encuentra el método.
