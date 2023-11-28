@@ -692,6 +692,9 @@ console.log(persona1.obtenerInformacion());  // Resultado: "Nombre: Juan, Edad: 
 console.log(persona2.obtenerInformacion());  // Resultado: "Nombre: María, Edad: 30"
  ~~~
 
+## 28. ¿Qué es el Dom?
+Significa Document object model (modelo de objetos de documento). Es una estructura que interpreta el navegador el cual nos permite acceder a sus elementos, modificarlos, eliminarlos ...
+
 ## 29.  ¿Qué método se utiliza para recuperar un carácter de un índice determinado?
     
 La función `charAt()` de `string` de JavaScript encuentra un elemento char en el índice proporcionado.
