@@ -316,6 +316,24 @@ instancia.mostrarNombre();  // Resultado: "Ejemplo"
  ~~~
  En este ejemplo, `this` dentro del método mostrarNombre se refiere a la instancia de la clase EjemploClase. En este contexto, `this` apunta al objeto específico creado a partir de la clase.
 
+## 14. ¿Qué son las funciones de autoinvocación?
+ Una función autoinvocable es una función que se llama automáticamente en el momento de su creación.
+
+ Puede ser anónima:
+
+ ~~~jsx
+(function(){
+    console.log("Estoy dentro de un IIFE");
+})();
+ ~~~
+
+ O puede ser nombrada:
+
+ ~~~jsx
+(function nombreFuncion(){
+    console.log("Estoy dentro de un IIFE");
+})();
+ ~~~
 ## 15. Explique los métodos `call()`, `apply()` y `bind()`.
     
 - `call()` :
