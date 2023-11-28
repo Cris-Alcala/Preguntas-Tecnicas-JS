@@ -267,9 +267,9 @@ Caracteristicas:
 
 2.En modo estricto, no podrás usar la palabra clave JavaScript como parámetro o nombre de función.
 
-3.La palabra clave 'útil estricta' se utiliza para definir el modo estricto al inicio del script. El modo Estricto es compatible con todos los navegadores.
+3.La palabra clave 'use strict' se utiliza para definir el modo estricto al inicio del script. El modo Estricto es compatible con todos los navegadores.
 
-4.Los ingenieros no podrán crear variables globales en 'Strict Mode
+4.Los ingenieros no podrán crear variables globales en 'Strict Mode'
 
 ## 12. Explica las funciones de orden superior en javascript
 Una funcion es de orden superior cuando se le pasa como parámetro una funcion o cuando se de devuelve otra funcion
@@ -581,7 +581,7 @@ Existen 2 tipos de errores.
 
 ## 25.¿Qué es la memorización?
 
-La memorización es el modo por el cual el valor de retorno de una funcion se guarda en la caché en función de sus parámetros.
+La memorización (en inglés memoization) es el modo por el cual el valor de retorno de una funcion se guarda en la caché en función de sus parámetros.
 
 Si no se cambia el parámetro de esa función, se devuelve la versión en caché de la función.
 
@@ -603,7 +603,7 @@ Si no se cambia el parámetro de esa función, se devuelve la versión en caché
         }
     }
 
-    let memoizedFunc = memoizedMultiplyTo3();
+    let memoizedFunc = memoizedMultiplyTo3(); // accedemos desde memoizedFunc a la variable privada cache de la función externa memoizedMultiplyTo3().
 
     memoizedFunc(20); // devuelve el valor normal
     memoizedFunc(20);// devuelve el valor guardado en caché
