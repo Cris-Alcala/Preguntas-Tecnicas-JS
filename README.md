@@ -559,6 +559,10 @@ Por tanto, add es una closure o clausura, esto es, una función con acceso a una
 La variable counter está protegida por el scope de la función anónima y sólo puede ser cambiado utilizando la función add.
 Este es el principio del hook useState que se verá en React. Por lo que es muy importante entender su funcionamiento.
 
+## 21. Menciona algunas ventajas de javascript.
+
+JavaScript es un lenguaje versátil que funciona en el cliente y el servidor. Para el backend, Node.js es la opción principal. Es fácil de aprender y potencia funciones avanzadas en páginas web. Además, es rápido para los usuarios finales, mejorando la experiencia en aplicaciones web.
+
 ## 22. ¿Qué son los prototypes de objetos?
     
 Todos los objetos de javascript heredan propiedades de un **`prototype`**.
