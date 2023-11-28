@@ -219,7 +219,7 @@ console.log(persona_2.nombre) // Cris
 
 Como podemos ver, el paso es por referencia, esto quiere decir que se pasa la referencia del espacio de memoria y se copia, no los datos en sí.
 
-## 10 - ¿Qué es una función invocada inmediatamente en JavaScript?
+## 10. ¿Qué es una función invocada inmediatamente en JavaScript?
 Es una función que se ejecuta tan pronto como se define.
 
 **Sintaxis de IIFE**
@@ -237,7 +237,7 @@ Para comprender el IIFE, debemos comprender los dos conjuntos de paréntesis que
 })
 ```
 
-**Al ejecutar código javascript, cada vez que el compilador ve la palabra "función", asume que estamos declarando una función en el código. Por lo tanto, si no usamos el primer conjunto de paréntesis, el compilador arroja un error porque cree que estamos declarando una función y, según la sintaxis de declarar una función, una función siempre debe tener un nombre.**
+**Al ejecutar código javascript, cada vez que el compilador ve la palabra "function", asume que estamos declarando una función en el código. Por lo tanto, si no usamos el primer conjunto de paréntesis, el compilador arroja un error porque cree que estamos declarando una función y, según la sintaxis de declarar una función, una función siempre debe tener un nombre.**
 ```javascript
 function (){
     // Código aqui...
@@ -256,7 +256,7 @@ En resumen, el IIFE tiene dos propósitos principales:
 - Crear variables privadas para evitar conflictos con otros scripts o módulos.
 - Proporcionar una forma segura y organizada de encapsular funciones y variables.
 
-## 11.¿Que es el modo estricto en Javascript y cuáles son sus caracteristicas?
+## 11. ¿Que es el modo estricto en Javascript y cuáles son sus caracteristicas?
 
 El modo estricto en javascript es una funcion que permite escribir código o una funcion en un entorno operativo "estricto".
 En 'Modo Estricto', se lanzarán todas las formas de errores, incluidos los errores silenciosos. Como resultado, la depuración se vuelve mucho más simple. 
