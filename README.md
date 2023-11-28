@@ -1139,7 +1139,7 @@ JavaScript para las variables usa un paso por valor, aunque en los objetos se pa
 
 - Async/await facilita ciertos casos de uso de las funciones generadoras para ejecutarse de manera más sencilla.
 
-- El resultado de salida de la función generadora siempre es valor: X, hecho: Boolean, pero el valor de retorno de la función Async es siempre una promesa o genera un error.
+- El resultado de salida de la función generadora siempre es value: X, done: Boolean, pero el valor de retorno de la función Async es siempre una promesa o genera un error.
 
 ## 19.  ¿Cuál es el papel de los scripts diferidos en JavaScript?
     
