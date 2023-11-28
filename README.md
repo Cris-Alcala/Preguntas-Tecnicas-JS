@@ -92,7 +92,6 @@ return this.x;
 // Colección de datos en una matríz o array
 let array1 = [5, "Hello", true, 4.1];
 ```
-En este caso, la declaración se mueve a la parte superior al momento de ejecución y no nos generarñia ningún fallo llamarla antes de declararla.
 
 ## 2. ¿Qué es la elevación en Javascript?
 
@@ -105,6 +104,8 @@ let modifyFunction = () => {
     // Cuerpo de la función
 }
 ```
+En este caso, la declaración se mueve a la parte superior al momento de ejecución y no nos generarñia ningún fallo llamarla antes de declararla.
+
 ## 3 - ¿Por qué usamos la palabra "depurador" en javascript?
 El depurador del navegador debe estar activado para poder depurar el código. Los depuradores integrados se pueden activar y desactivar, lo que requiere que el usuario informe los fallos. Las sección restante del código debería detener la ejecución antes de pasar a la siguiente línea durante la depuración
 
