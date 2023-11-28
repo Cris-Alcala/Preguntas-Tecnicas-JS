@@ -1050,6 +1050,17 @@ Se utiliza principalmente para manejar operaciones asíncronas, controlar el flu
 
 Los callbacks son una técnica de asegurarte que un código en particular no se ejecuta hasta que otro código haya completado su ejecución.
 
+## 11. Explique WeakMap en javascript
+En javascript se usa Map para almacenar conjuntos clave-valor. El weakMap se diferencia en que debe ser siempre un objeto, si no es un objeto, será recolectado como basura
+```javascript
+    let objeto={
+      nombre:"Juan",
+      Apellidos:"Gutiérrez Castro"
+    }
+    const mapa = new WeakMap();
+    mapa.set(objeto,{anios:20});
+```
+
 ## 12.  ¿Qué es la desestructuración de objetos?
     
 La desestructuración de objetos es una nueva forma de extraer elementos de un objeto o un array
