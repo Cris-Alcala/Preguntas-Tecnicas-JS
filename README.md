@@ -417,7 +417,7 @@ Este método te devuelve un arreglo con diferentes elementos (cadena buscada, in
 let regExp = /n/;
 regExp.exec('no'); // [ 'n', index: 0, input: 'no', groups: undefined ]
 ```
-## 17 - ¿Qué es el curry en JavaScript?
+## 17. ¿Qué es el currying en JavaScript?
 La técnica del currying es una forma de programación funcional en la cual se aplica la función de manera recursiva.
 
 ```javascript
@@ -464,13 +464,13 @@ Algunas ventajas de javascript externo son
 3.La legibilidad de código es simple en javascript externo.
 
 
-## 19. Explique el alcance y la cadena de alcance en javascript
+## 19. Explique el "scope" y la "scope chain" en javascript
 Hay 3 tipos de alcance:
-    -Alcance global
-    -Alcance local o funcional
-    -alcance en bloque
+    - Global scope
+    - Local or function scope
+    - Block scope
 
-**Alcance global:**
+**Global scope:**
 Son las variables o funciones que se pueden acceder a ellas desde cualquier lugar dentro del codigo
 
 ```javascript
@@ -481,7 +481,7 @@ function aniadeNombre(){
 }
 ```
 
-**Alcance local o funcional:**
+**ALocal or function scope:**
 Son las variables que estan declaradas dentro de la funcion, por lo que solo sirven para esa funcion y no se pueden llamar fuera de esta
 ```javascript
 function devuelveNombre(){
@@ -490,7 +490,7 @@ function devuelveNombre(){
 }
 ```
 
-**Alcance en bloque:**
+**Block scope:**
 Este tipo de alcance esta relacionado con las variables let y const. Las variables con var no tienen alcance en bloque. Las variables con let no se pueden acceder a ellas mientras que con var si
 ```javascript
 {
@@ -500,7 +500,7 @@ Este tipo de alcance esta relacionado con las variables let y const. Las variabl
 console.log(edad) //Nos mostraria un error
 ```
 
-**Cadena de alcance:**
+**Scope chain:**
 Son las variables que estan dentro de una funcion, si estas no estan dentro de esa funcion se buscan fuera de la funcion
 
 ```javascript
