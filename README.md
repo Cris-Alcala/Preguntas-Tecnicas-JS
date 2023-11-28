@@ -1103,8 +1103,8 @@ let miPerro = new Perro("Rex");
 miPerro.come(); // Rex está comiendo
 miPerro.ladra(); // Rex está ladrando
 ```
-## 14 - ¿Qué es una zona muerta temporal?
-La zona muerta temporal es un comportamiento que ocurre con variables declaradas usando palabras clave let y const . Es un comportamiento en el que intentamos acceder a una variable antes de que se inicialice. Ejemplos de zona muerta temporal:
+## 14. ¿Qué es una zona muerta temporal?
+La zona muerta temporal es un comportamiento que ocurre con variables declaradas usando palabras clave let y const . Es un comportamiento en el que intentamos acceder a una variable antes de que se declare. Ejemplos de zona muerta temporal:
 ```javascript
 x = 23; // Gives reference error
 
