@@ -563,12 +563,12 @@ Siempre que la propiedad o método no se encuentre en el objeto actual, el motor
 A la acción de llamar a una función dentro de otra función (pasada o no pasada por parámetro) se le llama callback
 
 ```javascript
-elevarADos(num) {
-    console.log(Math.pow(num, 2));
+elevar(num, exponente) {
+    console.log(Math.pow(num, exponente));
 }
 
-operacion(num1, num2, operacion) {
-    operacion(num1, num2);
+operacion(num1, num2, elevar) {
+    elevar(num1, num2);
 }
 ```
 En este ejemplo podemos ver dos ejemplos, una donde simplemente llamamos a un "console.log()" dentro de la función y otro ejemplo donde pasamos como parámetro una función la cual se utilizará dentro.
