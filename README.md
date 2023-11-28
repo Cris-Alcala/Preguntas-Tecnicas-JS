@@ -277,7 +277,7 @@ Una funcion es de orden superior cuando se le pasa como parámetro una funcion o
 
 **Se le pasa por parámetro la función:**
 ```javascript
-function primeraFuncion(segundaFuncion()){
+function primeraFuncion(segundaFuncion){
     segundaFuncion();
 }
 ```
