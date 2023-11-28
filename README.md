@@ -104,10 +104,10 @@ let modifyFunction = () => {
     // Cuerpo de la función
 }
 ```
-En este caso, la declaración se mueve a la parte superior al momento de ejecución y no nos generarñia ningún fallo llamarla antes de declararla.
+En este caso, la declaración se mueve a la parte superior al momento de ejecución y no nos generaría ningún fallo llamarla antes de declararla.
 
-## 3 - ¿Por qué usamos la palabra "depurador" en javascript?
-El depurador del navegador debe estar activado para poder depurar el código. Los depuradores integrados se pueden activar y desactivar, lo que requiere que el usuario informe los fallos. Las sección restante del código debería detener la ejecución antes de pasar a la siguiente línea durante la depuración
+## 3. ¿Por qué usamos la palabra "debugger" en javascript?
+El "debugger" del navegador debe estar activado para poder depurar el código. Los "debuggers" integrados se pueden activar y desactivar, lo que requiere que el usuario informe los fallos. Las sección restante del código debería detener la ejecución antes de pasar a la siguiente línea durante la depuración
 
 ## 4.Diferencia entre los operadores "==" y "==="
 La principal diferencia entre ambos operadores es que == se utiliza para comparar valores, mientras que === se utiliza para comparar tanto valores como tipos.
