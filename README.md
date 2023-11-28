@@ -1176,7 +1176,34 @@ Se dividen principalmente en 3 categorías:
 **Patrón de Diseño de Comportamiento:** Este patrón de diseño resalta patrones típicos de comunicación entre objetos en JavaScript. Como resultado, la comunicación puede llevarse a cabo con mayor libertad.
 
 ## 16. ¿Es JavaScript un lenguaje de paso por referencia o de paso por valor?
-JavaScript para las variables usa un paso por valor, aunque en los objetos se pasa por referencia pero esta sigue siendo pasada por valor, por lo que recibe una copia, estas modificaciones que se hagan a la copia también son afectadas a la original
+JavaScript maneja la pasada de argumentos por valor y por referencia dependiendo del tipo de datos que se esté utilizando.
+
+En el caso de tipos primitivos como números, cadenas de texto (strings), booleanos, null y undefined, JavaScript pasa estos valores por valor. Es decir, cuando se pasa una variable que contiene un valor primitivo a una función, se pasa una copia de ese valor, y cualquier modificación realizada dentro de la función no afectará a la variable original fuera de la función.
+
+Por otro lado, cuando se trata de objetos (incluyendo arrays y funciones), JavaScript pasa estos valores por referencia. Cuando se pasa una variable que hace referencia a un objeto a una función, se pasa la referencia al objeto en memoria y no una copia del objeto en sí. Por lo tanto, cualquier modificación realizada dentro de la función afectará al objeto original fuera de la función, ya que ambas variables hacen referencia al mismo objeto en memoria.
+```javascript
+// Pasando valores primitivos por valor
+let num = 10;
+
+function modificarNumero(x) {
+  x = 20;
+  console.log(x); // Imprimirá 20
+}
+
+modificarNumero(num);
+console.log(num); // Imprimirá 10, ya que num sigue siendo 10
+
+// Pasando objetos por referencia
+let persona = { nombre: 'Juan', edad: 30 };
+
+function modificarPersona(obj) {
+  obj.edad = 35;
+  console.log(obj.edad); // Imprimirá 35
+}
+
+modificarPersona(persona);
+console.log(persona.edad); // Imprimirá 35, ya que se modificó el objeto original
+```
 
 ## 17. Diferencia entre el uso de Async/Await y Generators para lograr la misma funcionalidad.
 
