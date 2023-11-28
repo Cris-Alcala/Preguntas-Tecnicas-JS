@@ -1213,6 +1213,77 @@ console.log(persona.edad); // Imprimirá 35, ya que se modificó el objeto origi
 
 - El resultado de salida de la función generadora siempre es value: X, done: Boolean, pero el valor de retorno de la función Async es siempre una promesa o genera un error.
 
+## 18. ¿Cuáles son los tipos de datos primitivos en JavaScript?
+Son los datos que solo pueden almacenar un valor
+- **String**
+  
+  Representa una serie de caracteres y se escribe entre comillas. Una cadena se puede representar mediante comillas simples o dobles.
+
+ Ejemplo :
+
+ ~~~jsx
+  let str = "Vivek Singh Bisht"; //usando doble comillas
+  let str2 = 'John Doe'; //usando comillas simples
+ ~~~
+ 
+ - **Number**
+
+Representa un número y se puede escribir con o sin decimales.
+
+Ejemplo :
+
+```jsx
+let x = 3; 
+let y = 3.6;
+```
+
+- **BigInt**
+
+Este tipo de datos se utiliza para almacenar números que están por encima de la limitación del tipo de datos Número. Puede almacenar números enteros grandes y se representa agregando "n" a un literal entero.
+
+Ejemplo :
+
+```jsx
+let bigInteger =  234567890123456789012345678901234567890;
+```
+
+- **Booleano**
+
+Representa una entidad lógica y sólo puede tener dos valores: verdadero o falso. Los booleanos se utilizan generalmente para pruebas condicionales.
+
+Ejemplo :
+
+```jsx
+let a = 2;
+let b =  3;
+let c =  2;
+(a == b) // returns false
+(a == c) //returns true
+```
+
+- **Indefinido**
+
+Cuando una variable se declara pero no se asigna, tiene el valor indefinido y su tipo también es indefinido.
+
+Ejemplo :
+
+```jsx
+let x; // valor de x es indefinido
+
+let y = 'ejemplo';
+let y = undefined; // podemos cambiar el valor de una variable a undefined
+```
+
+- **Nulo**
+
+Representa un valor inexistente o no válido.
+
+Ejemplo :
+
+```jsx
+let z = null;
+```
+
 ## 19.  ¿Cuál es el papel de los scripts diferidos en JavaScript?
     
 Los scripts diferidos en JavaScript son scripts que no se ejecutan tan pronto como se cargan en la página web, sino que **se retrasan hasta que la página ha terminado de analizarse y construirse**.
