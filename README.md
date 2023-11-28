@@ -5,7 +5,8 @@
 ## 1. ¿Cuáles son los diferentes tipos de datos presentes en JavaScript?
 
 ### A - Tipos primitivos
-- **String** : representa una serie de caracteres y se escribe entre comillas. Una cadena se puede representar mediante comillas simples o dobles.
+- **String**
+  Representa una serie de caracteres y se escribe entre comillas. Una cadena se puede representar mediante comillas simples o dobles.
 
  Ejemplo :
 
