@@ -290,7 +290,10 @@ function primeraFuncion() {
     return "Hola mundo";
   }
 
-}      
+}
+
+let segundaFuncion = primeraFuncion();
+console.log(segundaFuncion()); // Hola Mundo      
 
 ```
 
