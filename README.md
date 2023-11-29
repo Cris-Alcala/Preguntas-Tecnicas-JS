@@ -1047,28 +1047,35 @@ auto1.mostrarInformacion(); // Marca: Toyota, Modelo: Corolla, Color: Rojo
 auto2.mostrarInformacion(); // Marca: Honda, Modelo: Civic, Color: Blanco
 ```
 
-## 8.¿Qué son las funciones generadoras?
+## 8. ¿Qué son las funciones generadoras?
 
-Las funciones generadoras son una clase especial de funciones que se pueden detener a mitad de camino y luego continuar desde donde se habían detenido.
+Indicar que las funciones generadoras se declaran con la palabra reservada function* en vez de function.
 
-**En las funciones normales, utilizamos la palabra clave de retorno para devolver un valor y tan pronto como se ejecute la declaración de retorno, la ejecución de la función se detiene:**
+En el ejemplo que muestras con los 2 yield, puedes añadir que al objeto generador que devuelve se puede llamar mediante next para acceder a cada uno de los valores de yield:
 
 ```javascript
-    function mostrarValor(valor){
-        return valor;
-        console.log(15) // Esta línea no se ejecutará
-    }
+holaMundo().next(); // Returns {value: 'hola mundo', done:false}
+holaMundo().next(); // Returns {value: 'soy dani', done:true}
 ```
 
-**En el caso de las funciones generadoras, cuando se les llama, no ejecutan el código, en cambio, devuelven un objeto generador. Este objeto generador se encarga de la ejecución.**
+
+Y podrías hacer referencia al siguiente ejemplo en el que se muestra cómo construir una función generadora que devuelve un iterador:
 
 ```javascript
-    function *holaMundo(){
-        yield 'holaMundo';
-        yield 'soy dani';
-    };
+function* iteratorFunc() {
+  let count = 0;
+  for (let i = 0; i < 2; i++) {
+      count++;
+      yield i;
+  }
+  return count;
+}
 
-    holaMundo(); // devuelve un objeto de tipo generador
+let iterator = iteratorFunc();
+console.log(iterator.next()); // {value:0,done:false}
+console.log(iterator.next()); // {value:1,done:false}
+console.log(iterator.next()); // {value:2,done:true}
+console.log(iterator.next()); // {value:undefined,done:true}
 ```
 
 ## 9. Explique WeakSet en javascript
