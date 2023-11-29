@@ -163,7 +163,7 @@ Mediante la función String(), se realiza una coerción explícita del número a
 
 La coerción puede conducir a comportamientos inesperados, por lo que es importante entender cómo funciona y manejarla adecuadamente en tus programas. Además, es una buena práctica realizar conversiones explícitas cuando sea posible para evitar sorpresas en tu código.
 
-## 7. ¿Es JavaScript un lenguaje de tipado dinámico o de tipado estático?
+## 7. ¿Es JavaScript un lenguaje de tipado dinámico o de tipado estático?
 
 JavaScript es un lenguaje de tipado dinámico, lo que quiere decir, que el tipo de una variable se comprueba en la ejecución al contrario de un lenguaje de tipado estático, que se comprueba en la compilación.
 
