@@ -715,7 +715,21 @@ console.log(persona2.obtenerInformacion());  // Resultado: "Nombre: María, Edad
  ~~~
 
 ## 28. ¿Qué es el Dom?
-Significa Document object model (modelo de objetos de documento). Es una estructura que interpreta el navegador el cual nos permite acceder a sus elementos, modificarlos, eliminarlos ...
+El DOM, siglas en inglés de Document Object Model (Modelo de Objetos del Documento), es una representación estructurada y jerárquica de un documento HTML/XML que proporciona una interfaz programática para interactuar con la estructura del documento y sus elementos.
+
+El DOM se organiza como un árbol de nodos, donde cada nodo representa parte del documento, como elementos HTML, atributos, texto y más. Está compuesto por los siguientes tipos de nodos principales:
+
+Nodo Documento (Document Node): Es el nodo raíz que representa todo el documento. Todos los demás nodos están contenidos dentro de este nodo.
+
+Nodos Elemento (Element Nodes): Representan los elementos HTML en el documento, como <div>, <p>, <span>, entre otros.
+
+Nodos Texto (Text Nodes): Contienen el texto dentro de los elementos HTML.
+
+Nodos Atributo (Attribute Nodes): Representan los atributos de los elementos HTML.
+
+El DOM es dinámico y puede ser manipulado mediante JavaScript. Los navegadores web crean el DOM cuando cargan una página, interpretando el código HTML y generando una representación en forma de árbol. A través de JavaScript, los desarrolladores pueden acceder a este árbol, modificar sus elementos, añadir o eliminar nodos, cambiar estilos, manejar eventos y actualizar el contenido de la página en tiempo real, lo que permite crear experiencias interactivas y dinámicas en el navegador.
+
+El DOM es fundamental en el desarrollo web, ya que permite la interacción y manipulación de la estructura y el contenido de una página web, lo que resulta en aplicaciones web más dinámicas y responsivas.
 
 ## 29.  ¿Qué método se utiliza para recuperar un carácter de un índice determinado?
     
