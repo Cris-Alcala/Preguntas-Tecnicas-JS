@@ -719,13 +719,13 @@ El DOM, siglas en inglés de Document Object Model (Modelo de Objetos del Docume
 
 El DOM se organiza como un árbol de nodos, donde cada nodo representa parte del documento, como elementos HTML, atributos, texto y más. Está compuesto por los siguientes tipos de nodos principales:
 
-Nodo Documento (Document Node): Es el nodo raíz que representa todo el documento. Todos los demás nodos están contenidos dentro de este nodo.
+1. Nodo Documento (Document Node): Es el nodo raíz que representa todo el documento. Todos los demás nodos están contenidos dentro de este nodo.
 
-Nodos Elemento (Element Nodes): Representan los elementos HTML en el documento, como <div>, <p>, <span>, entre otros.
+2. Nodos Elemento (Element Nodes): Representan los elementos HTML en el documento, como <div>, <p>, <span>, entre otros.
 
-Nodos Texto (Text Nodes): Contienen el texto dentro de los elementos HTML.
+3. Nodos Texto (Text Nodes): Contienen el texto dentro de los elementos HTML.
 
-Nodos Atributo (Attribute Nodes): Representan los atributos de los elementos HTML.
+4. Nodos Atributo (Attribute Nodes): Representan los atributos de los elementos HTML.
 
 El DOM es dinámico y puede ser manipulado mediante JavaScript. Los navegadores web crean el DOM cuando cargan una página, interpretando el código HTML y generando una representación en forma de árbol. A través de JavaScript, los desarrolladores pueden acceder a este árbol, modificar sus elementos, añadir o eliminar nodos, cambiar estilos, manejar eventos y actualizar el contenido de la página en tiempo real, lo que permite crear experiencias interactivas y dinámicas en el navegador.
 
