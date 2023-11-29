@@ -672,6 +672,8 @@ Si no se cambia el parámetro de esa función, se devuelve la versión en caché
     memoizedFunc(20);// devuelve el valor guardado en caché
 ```
 
+En este caso ***memoizedFunc*** es una clausura que tiene acceso a su variable privada cache (array en el que guarda los valores de las llamadas).
+
 ### Explicacion:
 En el código anterior, si ejecutamos la función memoizedFunc con el mismo parámetro, en lugar de calcular el resultado de nuevo, devuelve el resultado en caché.
 
