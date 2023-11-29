@@ -700,6 +700,14 @@ function llegarADiez(){
     }
 }
 ```
+Cuando una función realiza una llamada a sí misma, sucede lo siguiente:
+
+- La función actual se pausa.
+- El contexto de ejecución asociado con él se recuerda en una estructura de datos especial llamada pila de contexto de ejecución.
+- La llamada anidada se ejecuta.
+- Una vez que finaliza, el antiguo contexto de ejecución se recupera de la pila y la función externa se reanuda desde donde se pausó.
+
+  Para más información, consultar el siguiente [enlace](https://es.javascript.info/recursion)
 
 ## 27. Uso de un constructor en JavaScript.
 Los constructores son funciones usadas para crear objetos en JavaScript.
