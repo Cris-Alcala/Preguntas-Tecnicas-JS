@@ -721,7 +721,7 @@ El DOM se organiza como un árbol de nodos, donde cada nodo representa parte del
 
 1. Nodo Documento (Document Node): Es el nodo raíz que representa todo el documento. Todos los demás nodos están contenidos dentro de este nodo.
 
-2. Nodos Elemento (Element Nodes): Representan los elementos HTML en el documento, como <div>, <p>, <span>, entre otros.
+2. Nodos Elemento (Element Nodes): Representan los elementos HTML en el documento, como ```<div>```, ```<p>```, ```<span>```, entre otros.
 
 3. Nodos Texto (Text Nodes): Contienen el texto dentro de los elementos HTML.
 
