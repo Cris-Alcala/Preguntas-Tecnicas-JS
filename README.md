@@ -704,7 +704,7 @@ function llegarADiez(){
 ## 27. Uso de un constructor en JavaScript.
 Los constructores son funciones usadas para crear objetos en JavaScript.
 
-Si queremos crear múltiples objetos en JavaScript con propiedades y métodos similares, las funciones constructor son usadas.
+Si queremos crear múltiples objetos en JavaScript con propiedades y métodos similares, las funciones constructoras son usadas:
  ~~~jsx
 // Definición del constructor
 function Persona(nombre, edad) {
@@ -726,6 +726,8 @@ var persona2 = new Persona("María", 30);
 console.log(persona1.obtenerInformacion());  // Resultado: "Nombre: Juan, Edad: 25"
 console.log(persona2.obtenerInformacion());  // Resultado: "Nombre: María, Edad: 30"
  ~~~
+
+A partir de ES6, están disponibles las clases y se puede crear la función constructora dentro de la misma.
 
 ## 28. ¿Qué es el Dom?
 El DOM, siglas en inglés de Document Object Model (Modelo de Objetos del Documento), es una representación estructurada y jerárquica de un documento HTML/XML que proporciona una interfaz programática para interactuar con la estructura del documento y sus elementos.
