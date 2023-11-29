@@ -1090,6 +1090,21 @@ Los callbacks son una técnica de asegurarte que un código en particular no se 
 
 ## 11. Explique WeakMap en javascript
 En javascript se usa Map para almacenar conjuntos clave-valor. El weakMap se diferencia en que debe ser siempre un objeto, si no es un objeto, será recolectado como basura
+
+¡Claro! Aquí está una versión más concisa sobre ```WeakMap```:
+
+-```WeakMap``` es una estructura de datos en JavaScript que almacena pares clave-valor donde las claves son objetos y los valores pueden ser de cualquier tipo.
+
+-A diferencia de ```Map```, las claves en un ```WeakMap``` son referencias débiles, lo que significa que si no hay otras referencias al objeto clave fuera del ```WeakMap```, el objeto puede ser eliminado por el recolector de basura.
+
+-No es iterable, no tiene métodos para obtener listas de claves, valores o pares clave-valor debido a la naturaleza débil de las claves.
+
+-Se usa cuando se necesita asociar datos con objetos y no se quiere evitar que los objetos sean eliminados cuando ya no se utilizan en otras partes del código.
+
+-Sus métodos principales son ```set()```, ```get()```, ```has()```, y ```delete()```, que permiten establecer valores, obtener valores, verificar la existencia de una clave y eliminar pares clave-valor respectivamente.
+
+-Útil para casos en los que se requiere asociar datos con objetos temporales o transitorios, sin impedir la eliminación de esos objetos por el recolector de basura.
+
 ```javascript
     let objeto={
       nombre:"Juan",
