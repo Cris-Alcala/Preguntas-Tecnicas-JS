@@ -1227,17 +1227,26 @@ function anotherRandomFunc(){
 anotherRandomFunc();
 ```
 
-## 15.¿Qué son los patrones de diseño en Javascript?
+## 15. ¿Qué son los patrones de diseño en Javascript?
+Los patrones de diseño son soluciones probadas para problemas comunes en el desarrollo de software. En JavaScript, hay tres tipos principales de patrones de diseño: creación, estructurales y de comportamiento.
 
-Los patrones de diseño son formas de estructuar el código en javascript cuya finalidad es crear código más estable.
+1. Patrones de diseño de creación: Estos patrones se centran en la creación de objetos. Algunos ejemplos comunes son:
+- Factory (Fábrica): Crea objetos sin especificar la clase exacta del objeto que se creará. Esto permite la creación de objetos basados en una interfaz común.
+- Singleton (Singleton): Asegura que una clase tenga una sola instancia y proporciona un punto de acceso global a ella.
+- Constructor (Constructor): Define una interfaz para crear un objeto, pero permite a las subclases alterar el tipo de objetos que se crearán.
 
-Se dividen principalmente en 3 categorías:
+2. Patrones de diseño estructurales: Estos patrones se centran en la composición de clases y objetos. Algunos ejemplos son:
+- Adapter (Adaptador): Permite que interfaces incompatibles trabajen juntas.
+- Decorator (Decorador): Añade funcionalidades a un objeto dinámicamente.
+- Facade (Fachada): Proporciona una interfaz simplificada para un conjunto más grande de interfaces o subsistemas.
+3. Patrones de diseño de comportamiento: Estos patrones se centran en la interacción entre objetos. Algunos ejemplos son:
+- Observer (Observador): Define una dependencia uno a muchos entre objetos, de modo que cuando un objeto cambia de estado, todos sus dependientes son notificados y actualizados automáticamente.
+- Strategy (Estrategia): Permite definir una familia de algoritmos, encapsular cada uno de ellos y hacerlos intercambiables.
+- Command (Comando): Encapsula una solicitud como un objeto, lo que le permite parametrizar clientes con solicitudes, encolar solicitudes, y soportar operaciones reversibles.
 
-**Patrón de Diseño de Creación:**El mecanismo de generación de objetos es abordado por el Patrón de Diseño Creacióntivo JavaScript. Su objetivo es hacer los artículos que sean apropiados para un determinado escenario.
+Estos patrones ofrecen soluciones probadas y comúnmente aceptadas para problemas específicos en el desarrollo de software. Al aplicarlos, puedes mejorar la modularidad, la reutilización y la mantenibilidad del código en tus proyectos JavaScript.
 
-**Patrón de Diseño Estructural:** El Patrón de Diseño Estructural JavaScript explica cómo las clases y objetos que hemos generado hasta ahora se pueden combinar para construir marcos más grandes. Este patrón hace que sea más fácil crear relaciones entre ítems definiendo una forma directa de hacerlo.
-
-**Patrón de Diseño de Comportamiento:** Este patrón de diseño resalta patrones típicos de comunicación entre objetos en JavaScript. Como resultado, la comunicación puede llevarse a cabo con mayor libertad.
+Más información: https://kinsta.com/es/blog/patrones-de-diseno-javascript/
 
 ## 16. ¿Es JavaScript un lenguaje de paso por referencia o de paso por valor?
 JavaScript maneja la pasada de argumentos por valor y por referencia dependiendo del tipo de datos que se esté utilizando.
