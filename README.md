@@ -163,6 +163,17 @@ Mediante la función String(), se realiza una coerción explícita del número a
 
 La coerción puede conducir a comportamientos inesperados, por lo que es importante entender cómo funciona y manejarla adecuadamente en tus programas. Además, es una buena práctica realizar conversiones explícitas cuando sea posible para evitar sorpresas en tu código.
 
+## 7. ¿Es JavaScript un lenguaje de tipado dinámico o de tipado estático?
+
+JavaScript es un lenguaje de tipado dinámico, lo que quiere decir, que el tipo de una variable se comprueba en la ejecución al contrario de un lenguaje de tipado estático, que se comprueba en la compilación.
+
+Asimismo, JavaScript no tiene sus variables asociadas a ningún tipo, lo que quiere decir que una variable puede contener un valor de cualquier tipo:
+
+ ~~~jsx
+var variableConTexto = "Variable con texto";
+var variableConNumero = 2023;
+ ~~~
+
 ## 8. ¿Qué es la propiedad NaN en JavaScript?
     
 La propiedad NaN representa el valor "No es un número" . Indica un valor que no es un número legal.
